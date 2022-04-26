@@ -10,7 +10,7 @@ variable "linux_admin_password" {
 }
 // GCP Variables
 variable "gcp_cluster_count" {
-    type = string
+    type = number
     description = "Count of cluster instances to start."
     default = 1
 }
@@ -41,4 +41,21 @@ variable "cluster_cp_location" {
     type = string
     description = "Location for the cluster control plane."
     default = "us-west1-a"
+}
+
+variable "service-account-id" {
+    type = string
+    description = "Service Account id for cluster SA."
+}
+
+variable "min_node_count" {
+    type = number
+    description = "min number of nodes for autoscaling."
+    default = 3
+}
+
+variable "max_node_count" {
+    type = number
+    description = "max number of nodes for autoscaling."
+    default = 8
 }
