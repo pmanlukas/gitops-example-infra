@@ -20,7 +20,8 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
 
   node_config {
     preemptible  = true
-    machine_type = "e2-standard-2"
+    machine_type = var.machine_type_node
+    disk_size_gb = var.machine_disk_size
     tags = ["gcp-test-nodes"]
 
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.

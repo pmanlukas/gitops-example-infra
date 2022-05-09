@@ -59,3 +59,14 @@ variable "max_node_count" {
     description = "max number of nodes for autoscaling."
     default = 8
 }
+
+variable "machine_disk_size" {
+    type = number
+    description = "Storage in GB for nodes in cluster."
+    default = 100
+}
+variable "machine_type_node" {
+    type = string
+    description = "Machine type used for worker nodes."
+    default = "e2-standard-4"
+}
